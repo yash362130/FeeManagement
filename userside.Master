@@ -1,0 +1,124 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="userside.master.cs" Inherits="Fee_Management.userside" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="CSS/header.css" rel="stylesheet" />
+    <!-- Add this line to include Font Awesome CSS -->
+    <%--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-vB+6tKTuOfCBUpddQiRv4sE7vbzvxlCGZTkDl0uDb62FdEaBHGk5g86OHFt9VCRbfhLbi9biW/wIZddx89Ep6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />--%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .logout-button {
+            background-color: #f44336; /* Red background color */
+            color: white; /* White text color */
+            padding: 10px 15px; /* Padding for the button */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Cursor on hover */
+            margin-right: 10px; /* Right margin for proper spacing */
+        }
+
+            .logout-button:hover {
+                background-color: #d32f2f; /* Darker red on hover */
+            }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Adjusted to align items to the top */
+        }
+
+        .left-section {
+            text-align: left;
+            flex: 1; /* Occupy remaining space */
+            padding-right: 20px; /* Added padding to separate from other sections */
+        }
+
+        .center-section,
+        .right-section {
+            flex: 1; /* Occupy remaining space */
+        }
+
+        .footer-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px; /* Increased margin for better readability */
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin-right: 10px; /* Adjusted margin between social icons */
+        }
+
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="topnav" id="myTopnav">
+            <a href="user_information.aspx" class="active">Home</a>
+            <div class="dropdown">
+                <a href="User/history.aspx" class="dropdown" runat="server">History</a>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropdown" runat="server" onserverclick="Unnamed_ServerClick"><i class="fa fa-sign-out"></i>Logout</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+        </script>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer>
+            <div class="footer-content">
+                <div class="left-section">
+                    <h3>Shree Brahmanand Group of Colleges</h3>
+                    <p>Razorpay offers seamless fee management solutions, enabling businesses to effortlessly collect and manage fees, subscriptions, and payments online. With its intuitive interface and robust features, Razorpay streamlines fee collection processes, ensuring efficiency and transparency for both businesses and customers.</p>
+                </div>
+                <div class="center-section">
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                    <p>Address: Chaparda,Junagadh</p>
+                </div>
+                <div class="right-section">
+                    <div class="social-icons">
+                        <p>Follow us on social media</p>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <!-- Add more social media icons as needed -->
+                    </div>
+                </div>
+            </div>
+            <p class="note">Fee Management System | © 2024 Shree Brahmanand Group of Colleges</p>
+        </footer>
+    </form>
+</body>
+</html>

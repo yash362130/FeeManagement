@@ -1,0 +1,158 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Design.master.cs" Inherits="Fee_Management.Design" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap; /* Added flex-wrap to allow wrapping on smaller screens */
+            justify-content: space-between;
+        }
+
+        .left-section {
+            text-align: left;
+            flex: 1 1 300px; /* Allow flexible sizing with a minimum width of 300px */
+            margin-right: 20px; /* Added margin for spacing between sections */
+        }
+
+        .center-section,
+        .right-section {
+            flex: 1 1 200px; /* Allow flexible sizing with a minimum width of 200px */
+            margin-top: 20px; /* Added margin for spacing */
+        }
+
+        .footer-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 768px) {
+            .footer-content {
+                flex-direction: column; /* Stack sections vertically on smaller screens */
+            }
+
+            .left-section,
+            .center-section,
+            .right-section {
+                width: 100%; /* Make sections occupy full width on smaller screens */
+                margin: 0; /* Remove margin on smaller screens */
+            }
+        }
+
+        .logout-button {
+            display: block;
+            text-align: right;
+            margin-top: 20px;
+            color: #333; /* Adjust color as needed */
+            margin-right: 5%;
+        }
+
+        .logout-button {
+            color: white; /* Adjust hover color as needed */
+        }
+
+            .logout-button i {
+                margin-right: 5px;
+            }
+    </style>
+    <link href="CSS/header.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header Start -->
+        <div class="topnav" id="myTopnav">
+            <a href="home.aspx" class="active">Home</a>
+            <div class="dropdown">
+                <a href="Admin/add_student.aspx" runat="server">Add Student</a>
+            </div>
+            <div class="dropdown">
+                <a href="Admin/add_fee.aspx" runat="server">Add Fee</a>
+            </div>
+            <div class="dropdown">
+                <a href="Admin/update_class.aspx" runat="server">Update Class</a>
+            </div>
+            <div class="dropdown">
+                <a href="Admin/add_course.aspx" runat="server">Add Course</a>
+            </div>
+            <div class="dropdown">
+                <a href="Admin/delete_student.aspx" runat="server">Delete Student</a>
+            </div>
+            <div class="dropdown">
+                <a href="Admin/fee_information.aspx" runat="server">Fee Information</a>
+            </div>
+            <div class="dropdown">
+                <a href="Admin/fee_mafi.aspx" runat="server">Fee Waiver</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.classList.contains("responsive")) {
+                    x.classList.remove("responsive");
+                } else {
+                    x.classList.add("responsive");
+                }
+            }
+        </script>
+
+        <!-- Header Over-->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer>
+            <div class="footer-content">
+                <div class="left-section">
+                    <h3>Shree Brahmanand Group of Colleges</h3>
+                    <p>Razorpay offers seamless fee management solutions, enabling businesses to effortlessly collect and manage fees, subscriptions, and payments online. With its intuitive interface and robust features, Razorpay streamlines fee collection processes, ensuring efficiency and transparency for both businesses and customers.</p>
+                </div>
+                <div class="center-section">
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                    <p>Address: Chaparda,Junagadh</p>
+                </div>
+                <div class="right-section">
+                    <div class="social-icons">
+                        <p>Follow us on social media</p>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <!-- Add more social media icons as needed -->
+                    </div>
+                </div>
+            </div>
+            <p class="note">Fee Management System | © 2024 Shree Brahmanand Group of Colleges</p>
+        </footer>
+    </form>
+</body>
+</html>
